@@ -32,12 +32,13 @@ class WebAuthorization extends WebSecurityConfigurerAdapter {
     http.authorizeRequests()
 
                .antMatchers("/index.html").permitAll()
+
              .antMatchers("/app/login*").permitAll()
           .antMatchers( "/web/styles/index.css", "/web/scripts/index.js").permitAll()
             .antMatchers("/weba/*").hasAuthority("CLIENT")
               .antMatchers("/admin/**").hasAuthority("ADMIN")
              .antMatchers("/rest/**", "/h2-console/**").hasAuthority("ADMIN")
-            .antMatchers("/api").permitAll();
+            .antMatchers("/api/**").permitAll();
 
 
         http.formLogin()
