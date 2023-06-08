@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
-import java.util.List;
+
 
 
 @EnableWebSecurity
@@ -76,7 +76,9 @@ class WebAuthorization extends WebSecurityConfigurerAdapter {
         ArrayList<String> lista1 = new ArrayList<>();
         ArrayList<String> lista2 = new ArrayList<>();
         ArrayList<String> lista3 = new ArrayList<>();
+        lista1.add("edel-origen.up.railway.app");
         lista1.add("http://localhost:8080");
+        lista1.add("*");
         lista2.add("Get");
         lista2.add("Post");
         lista2.add("Put" );
@@ -95,8 +97,8 @@ class WebAuthorization extends WebSecurityConfigurerAdapter {
         return source;
     }
 }
-   /*
-    @Bean
+
+  /*  @Bean
     public WebSecurityCustomizer webSecurityCustomizer(){
         return (web)-> web.ignoring()
                 .antMatchers("resources/**");

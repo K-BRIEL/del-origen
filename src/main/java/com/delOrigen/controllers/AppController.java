@@ -21,7 +21,7 @@ public class AppController {
     @Autowired
     private UsuarioRepository usRepository;
 
-    @RequestMapping(path = "/register", method = RequestMethod.POST)
+    @PostMapping(path = "/register")
     public ResponseEntity<Object> register(
             @RequestParam String nombre,
             @RequestParam String email, @RequestParam String password) {
